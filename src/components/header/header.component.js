@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logobookmark.svg'
 import { UilAlignJustify } from '@iconscout/react-unicons'
 
 export const Header = () => {
@@ -9,7 +9,7 @@ export const Header = () => {
         <header className="font-Poppins">
             <nav className="container flex items-center py-4 mt-4 sm:mt-12">
                 <div className="py-1">
-                    <img src={Logo} alt="logo" className="" />
+                    <img src={Logo} alt="logo"  />
                 </div>
                 <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 uppercase text-blue-700 text-lg">
                     <li className="cursor-pointer">Features</li>

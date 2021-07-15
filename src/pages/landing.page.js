@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Header } from '../components/header/header.component'
+import { Hero } from '../components/hero/hero.component'
 
 export const LandingPage = () => {
 
@@ -13,6 +14,7 @@ export const LandingPage = () => {
     return (
         <>
             <Header />
+            <Hero />
         </>
     )
 }
