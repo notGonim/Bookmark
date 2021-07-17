@@ -14,8 +14,8 @@ export const FeatureTwo = () => {
                     />
                 </div>
                 <div className="flex flex-1 flex-col items-center lg:items-start">
-                    <h1 className="text-3xl text-bookmark-blue">Intelligent search</h1>
-                    <p className="text-bookmark-grey my-4 text-center lg:text-left sm:w-3/4 lg:w-full">
+                    <h1 className="text-blue-700 font-semibold	 text-3xl">Intelligent search</h1>
+                    <p className="text-gray-600 text-lg text-center mb-6  lg:text-left sm:w-3/4 lg:w-full">
                         Our powerful search feature will help you find saved sites in no time at all. No need to crawl through all
                         of your bookmarks.
                     </p>
