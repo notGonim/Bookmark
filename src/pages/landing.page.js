@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Contact } from '../components/contact/contact.component'
 import { Download } from '../components/download/download.component'
 import { FAQ } from '../components/faq/faq.component'
 import { Feature } from '../components/feature/feature.component'
@@ -25,6 +26,7 @@ export const LandingPage = () => {
             <FeatureThree />
             <Download/>
             <FAQ />
+            <Contact />
         </>
     )
 }

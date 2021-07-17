@@ -7,7 +7,7 @@ import Opera from '../../assets/opera.svg'
 
 export const Download = () => {
     return (
-        <section className="py-20 mt-20" >
+        <section className="py-20 mt-20 font-Poppins" >
             <Headeing title="Download the extension" para="We`ve got browser in the pipeline .Please do let us know if you`ve got a favourite you `d like us to priotize . " />
             <div className="container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-16 max-w-screen-lg  mt-16">
                 <Card img={Chrome}  title="Add to Chrome" para="Minimum version 62" cls="lg:mb-16" />

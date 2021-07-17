@@ -3,7 +3,7 @@ import Feature3 from '../../assets/f3.png'
 
 export const FeatureThree = () => {
     return (
-        <section className="font-Poppins  bg-gray-100 h-screen">
+        <section className="font-Poppins  bg-gray-50 h-screen">
             <div className="relative  py-10 lg:mt-52">
                 <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
                     <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0">
