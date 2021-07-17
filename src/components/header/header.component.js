@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../assets/logobookmark.svg'
+import Logo from '../../assets/logoWhite.svg'
 import { UilAlignJustify } from '@iconscout/react-unicons'
 
 export const Header = () => {

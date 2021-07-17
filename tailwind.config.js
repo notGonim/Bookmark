@@ -2,7 +2,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "midnight-blue": "#242A45",
+      },
+    },
     fontFamily: {
       Poppins: ["Poppins,sans-serif "],
     },
