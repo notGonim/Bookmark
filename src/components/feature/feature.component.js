@@ -6,7 +6,7 @@ export const Feature = () => {
 
 
     return (
-        <section className="bg-gray-100 py-40 lg:mt-20  font-Poppins">
+        <section className="bg-gray-100 py-20 lg:mt-20  font-Poppins">
             <Headeing title="Features" para="Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devious so you can access them on the go ." />
             <div className="relative  lg:mt-24">
                 <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
