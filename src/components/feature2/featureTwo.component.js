@@ -4,7 +4,7 @@ import Feature2 from '../../assets/f2.png'
 export const FeatureTwo = () => {
     return (
         <section className=" font-Poppins ">
-        <div className="relative  lg:mt-52">
+        <div className="relative py-5 lg:mt-40">
             <div className="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-24">
                 <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0">
                     <img
