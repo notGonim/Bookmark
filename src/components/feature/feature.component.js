@@ -5,7 +5,7 @@ export const Feature = () => {
 
 
     return (
-        <section className="bg-gray-100 py-20 mt-60 lg:mt-20 font-Poppins">
+        <section className="bg-gray-100 pt-20 mt-60 lg:mt-20 font-Poppins">
             <div className="sm:w-3/4  lg:w5-5/12 mx-auto px-2">
                 <h1 className="text-blue-700 font-bold	 text-3xl text-center ">Features</h1>
                 <p className="text-gray-600 text-lg text-center mt-4">Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devious so you can access them on the go </p>
@@ -21,7 +21,7 @@ export const Feature = () => {
                             Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control
                             over how you manage your favourite sites.
                         </p>
-                        <button type="button" className="btn btn-purple hover:bg-bookmark-white hover:text-black">More Info</button>
+                        <button type="button" className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</button>
                     </div>
                 </div>
                 <div className="hidden lg:block overflow-hidden bg-blue-700 rounded-r-full absolute h-80 w-2/4 -bottom-24  -left-36"></div>
