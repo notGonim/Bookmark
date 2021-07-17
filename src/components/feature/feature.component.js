@@ -1,15 +1,13 @@
 import React from 'react'
 import Feature1 from '../../assets/f1.png'
+import { Headeing } from '../heading/headeing.component'
 
 export const Feature = () => {
 
 
     return (
         <section className="bg-gray-100 pt-20 mt-60 lg:mt-20 font-Poppins">
-            <div className="sm:w-3/4  lg:w5-5/12 mx-auto px-2">
-                <h1 className="text-blue-700 font-bold	 text-5xl text-center ">Features</h1>
-                <p className="text-gray-600 text-2xl text-center mt-4">Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devious so you can access them on the go </p>
-            </div>
+            <Headeing title="Features" para="Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devious so you can access them on the go ." />
             <div className="relative mt-20 lg:mt-24">
                 <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
                     <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0">

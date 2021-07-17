@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Download } from '../components/download/download.component'
 import { Feature } from '../components/feature/feature.component'
 import { FeatureTwo } from '../components/feature2/featureTwo.component'
 import { FeatureThree } from '../components/feature3/featureThree.component'
@@ -21,6 +22,7 @@ export const LandingPage = () => {
             <Feature />
             <FeatureTwo />
             <FeatureThree />
+            <Download/>
         </>
     )
 }
