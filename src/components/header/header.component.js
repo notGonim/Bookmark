@@ -7,7 +7,7 @@ export const Header = () => {
     return (
 
         <header className="font-Poppins ">
-            <nav className="container flex items-center py-2 mt-2 sm:mt-12">
+            <nav className="container flex items-center  py-2 mt-2 sm:mt-12">
                 <div className="py-1">
                     <img src={Logo} alt="logo"  />
                 </div>
