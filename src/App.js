@@ -1,7 +1,9 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router";
 import { lazy, Suspense } from "react";
 import * as ROUTES from './constants/routes'
 
+import IsUserLoggedIn from "./helpers/isUserLoggedIn";
+import ProtectedRoute from "./helpers/protectedRoutes";
 
 
 
