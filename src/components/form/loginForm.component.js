@@ -4,11 +4,12 @@ import Logo from '../../assets/logoWhite.svg'
 import { UilGithubAlt } from '@iconscout/react-unicons'
 import { UilTwitterAlt } from '@iconscout/react-unicons'
 import { UilGoogle } from '@iconscout/react-unicons'
+import { Link } from 'react-router-dom'
 
 
 export const LoginForm = () => {
     return (
-        <div className="shadow-sm justify-start  flex flex-col   w-full  mx-auto   py-10 items-center sm:mt-12   bg-white" >
+        <div className="shadow-sm justify-start flex flex-col lg:w-full w-5/6 m-5 py-10 lg:m-5 items-center sm:mt-12  bg-white" >
             <div className="px-4">
                 <div className="py-1">
                     <img src={Logo} alt="logo" />
@@ -38,13 +39,17 @@ export const LoginForm = () => {
                         <div className="flex justify-between py-3">
                             <div className="flex items-center">
                                 <input type="checkbox" className="mr-1" id="" />
-                                <span className="text-blue-600 text-sm font-medium">Remember me</span>
+                                <span className="text-black text-sm font-medium">Remember me</span>
                             </div>
                             <span className="text-blue-600 cursor-pointer text-sm font-medium">Forget your password?</span>
                         </div>
                         <button type="submit" className={`bg-blue-700 w-full rounded h-8 font-bold  text-white  `}>Login</button>
-
                     </form>
+                </div>
+                <div className="flex justify-center items-center flex-col w-full bg-white rounded p-4 border border-gray-primary ">
+                    <p className="text-sm">Don`t have an account? {''}
+                        <Link to='/signup' className="font-bold text-blue-500 ">Sign up</Link>
+                    </p>
                 </div>
             </div>
         </div>
