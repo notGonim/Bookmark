@@ -10,12 +10,20 @@ import Spinner from "./components/spinner/spinner.component";
 
 import { FourOfour } from './pages/fourOfour';
 import { LandingPage } from './pages/landing.page';
+import { SignupPage } from './pages/signup.page';
+import { LoginPage } from './pages/login.page';
 
 function App() {
   return (
-    <>
-      <FourOfour />
-    </>
+    <Router>
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          <Route path='/' exact component={LandingPage} />
+          <Route path='/signup' exact component={SignupPage} />
+          <Route path='/login' exact component={LoginPage} />
+        </Switch>
+      </Suspense>
+    </Router>
   );
 }
 
