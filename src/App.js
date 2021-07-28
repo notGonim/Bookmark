@@ -12,6 +12,7 @@ import { FourOfour } from './pages/fourOfour';
 import { LandingPage } from './pages/landing.page';
 import { SignupPage } from './pages/signup.page';
 import { LoginPage } from './pages/login.page';
+import { Dashboard } from "./pages/dashboard.page";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' exact component={LandingPage} />
           <Route path='/signup' exact component={SignupPage} />
           <Route path='/login' exact component={LoginPage} />
+          <Route path='/home' exact component={Dashboard} />
         </Switch>
       </Suspense>
     </Router>
