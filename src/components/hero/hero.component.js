@@ -1,5 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import HeroPic from '../../assets/hero.png'
+import * as ROUTES from '../../constants/routes'
+
 export const Hero = () => {
     return (
         <section className="relative font-Poppins  ">
@@ -12,7 +15,7 @@ export const Hero = () => {
                         A clean and simple interface to organize your favourite websites .Open a new browser tab and see your sites load instantly .
                     </p>
                     <div className="flex justify-center gap-6 flex-wrap">
-                        <button className="btn btn-purple font-bold hover:bg-white hover:text-black"> Try it for free</button>
+                        <Link to={ROUTES.SIGNUP} className="btn btn-purple font-bold hover:bg-white hover:text-black"> Try it for free</Link>
                     </div>
                 </div>
                 <div className="flex z-10 justify-center flex-1 mb-10 md:mb-16 lg:mb-0">

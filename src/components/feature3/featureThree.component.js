@@ -1,5 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Feature3 from '../../assets/f3.png'
+import * as ROUTES from '../../constants/routes'
+
+
 
 export const FeatureThree = () => {
     return (
@@ -19,7 +23,7 @@ export const FeatureThree = () => {
                             Easily share your bookmarks and collections with others. Create a shareable link that you can send at the
                             click of a button.
                         </p>
-                        <button type="button" className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</button>
+                        <Link to={ROUTES.LOGIN} className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</Link>
                     </div>
                 </div>
                 <div

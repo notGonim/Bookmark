@@ -1,5 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Feature2 from '../../assets/f2.png'
+import * as ROUTES from '../../constants/routes'
+
 
 export const FeatureTwo = () => {
     return (
@@ -19,7 +22,7 @@ export const FeatureTwo = () => {
                         Our powerful search feature will help you find saved sites in no time at all. No need to crawl through all
                         of your bookmarks.
                     </p>
-                    <button type="button" className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</button>
+                    <Link to={ROUTES.LOGIN} className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</Link>
                 </div>
             </div>
             <div

@@ -3,7 +3,7 @@ import { Headeing } from '../heading/headeing.component'
 import { Questions } from '../questions/questions.component'
 export const FAQ = () => {
     return (
-        <section className="bg-gray-50  py-20 font-Poppins">
+        <section id="fqa" className="bg-gray-50  py-20 font-Poppins">
             <div className="container">
                 <Headeing title="Frequently Asked Questions" para="Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us. " />
 

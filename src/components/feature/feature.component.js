@@ -1,12 +1,14 @@
 import React from 'react'
 import Feature1 from '../../assets/f1.png'
 import { Headeing } from '../heading/headeing.component'
+import * as ROUTES from '../../constants/routes'
+import { Link } from 'react-router-dom'
 
 export const Feature = () => {
 
 
     return (
-        <section className="bg-gray-50 py-20 lg:mt-20  font-Poppins">
+        <section id='feature' className="bg-gray-50 py-20 lg:mt-20  font-Poppins">
             <Headeing title="Features" para="Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devious so you can access them on the go ." />
             <div className="relative  lg:mt-24">
                 <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
@@ -19,7 +21,7 @@ export const Feature = () => {
                             Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control
                             over how you manage your favourite sites.
                         </p>
-                        <button type="button" className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</button>
+                        <Link to={ROUTES.LOGIN} className="btn btn-purple font-bold hover:bg-white hover:text-black">More Info</Link>
                     </div>
                 </div>
                 <div className="hidden lg:block overflow-hidden bg-blue-700 rounded-r-full absolute h-80 w-2/4 -bottom-24  -left-36"></div>
