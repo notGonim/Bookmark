@@ -9,7 +9,7 @@ import { Footer } from '../components/footer/footer.component'
 import { Header } from '../components/header/header.component'
 import { Hero } from '../components/hero/hero.component'
 
-export const LandingPage = () => {
+export default function LandingPage  ()  {
 
 
 

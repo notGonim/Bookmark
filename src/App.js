@@ -5,28 +5,54 @@ import IsUserLoggedIn from "./helpers/isUserLoggedIn";
 import ProtectedRoute from "./helpers/protectedRoutes";
 import Spinner from "./components/spinner/spinner.component";
 
+import useAuthListener from "./hooks/users/useAuth.hook";
+import UserContext from "./store/users/user.context";
+
+const SignupPage = lazy(() => import('./pages/signup.page'))
+const DashboardPage = lazy(() => import('./pages/dashboard.page'))
+const SigninPage = lazy(() => import('./pages/login.page'))
+const SettingPage = lazy(() => import('./pages/edit.page'))
+const LandingPage = lazy(() => import('./pages/landing.page'))
+const ProfilePage = lazy(() => import('./pages/profile.page'))
+const NotFound = lazy(() => import('./pages/fourOfour'))
 
 
-
-import { FourOfour } from './pages/fourOfour';
-import { LandingPage } from './pages/landing.page';
-import { SignupPage } from './pages/signup.page';
-import { LoginPage } from './pages/login.page';
-import { Dashboard } from "./pages/dashboard.page";
 
 function App() {
+
+  const { user } = useAuthListener()
+
+
+
   return (
-    <Router>
-      <Suspense fallback={<Spinner />}>
-        <Switch>
-          <Route path='/' exact component={LandingPage} />
-          <Route path='/signup' exact component={SignupPage} />
-          <Route path='/login' exact component={LoginPage} />
-          <Route path='/home' exact component={Dashboard} />
-        </Switch>
-      </Suspense>
-    </Router>
-  );
+    <UserContext.Provider value={{ user }}>
+      <Router>
+        <Suspense fallback={<Spinner />}>
+          <Switch>
+            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
+              <DashboardPage />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.PROFILE} exact   >
+              <ProfilePage />
+            </ProtectedRoute>
+            <ProtectedRoute user={user} path={ROUTES.SETTING} exact   >
+              <SettingPage />
+            </ProtectedRoute>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
+              <LandingPage />
+            </IsUserLoggedIn>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
+              <SigninPage />
+            </IsUserLoggedIn>
+            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
+              <SignupPage />
+            </IsUserLoggedIn>
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </UserContext.Provider>
+  )
 }
 
 export default App;

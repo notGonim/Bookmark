@@ -4,7 +4,7 @@ import { Footer } from '../components/footer/footer.component'
 import { LoggedHeader } from '../components/headerLogged/header'
 import { Sidebar } from '../components/sidebar/sidebar.component'
 
-export const Dashboard = () => {
+export default function Dashboard  ()  {
     return (
         <>
 

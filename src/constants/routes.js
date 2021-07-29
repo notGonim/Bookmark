@@ -1,6 +1,6 @@
 export const LANDPAGE = '/'
 export const DASHBOARD = '/home'
-export const LOGIN = '/signin'
+export const LOGIN = '/login'
 export const SIGNUP = '/signup'
 export const PROFILE = '/p'
 export const SETTING = '/edit'

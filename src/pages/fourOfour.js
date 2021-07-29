@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import FourO from '../assets/fourOfour.svg'
 
 
-export const FourOfour = () => {
+export default function FourOfour  ()  {
 
     useEffect(() => {
         document.title = 'Not Found - InstaGo'
