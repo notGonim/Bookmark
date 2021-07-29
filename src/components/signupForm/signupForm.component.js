@@ -1,10 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import Logo from '../../assets/logoWhite.svg'
+import FirebaseContext from '../../store/firebase/firebase.context'
+import * as ROUTES from './constants/routes'
 
 
 
 export const SignupForm = () => {
+
+
+    const history = useHistory()
+    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
+    const [fullname, setFullname] = useState('')
+    const [password, setPassword] = useState('')
+    const [err, setError] = useState('')
+    const { firebase } = useContext(FirebaseContext)
+
+    const isInvalid = username === '' || fullname === '' || password === '' || email === ''
+
+
+    const handleSignup = async (e) => {
+        e.preventDefault()
+        const usernameExists = await doesUsernameExist(username)
+        if (!usernameExists.length) {
+            try {
+                const createdUserResult = await firebase.auth().createUserWithEmailAndPassword(email, password)
+                //authentication
+                //
+                await createdUserResult.user.updateProfile({
+                    displayName: username
+                })
+                //create a user 
+                await firebase.firestore().collection('users').add(
+                    {
+                        userId: createdUserResult.user.uid,
+                        username: username.toLowerCase(),
+                        fullname,
+                        emailAddress: email.toLowerCase(),
+                        pets: [],
+                        dateCreated: Date.now()
+                    }
+                )
+                history.push(ROUTES.DASHBOARD)
+            } catch (err) {
+                setFullname('')
+                setUsername('')
+                setPassword('')
+                setEmail('')
+                setError(err.message)
+            }
+        } else {
+            setError('That username is already taken, please try another. ')
+        }
+    }
+
+
+    useEffect(() => {
+        document.title = 'Sign Up - Bookmark'
+    }, [])
+
     return (
         <div className="shadow-sm justify-start flex flex-col lg:w-full w-5/6 m-5 py-10 lg:m-5 px-20 items-center sm:mt-12  bg-white" >
             <div className="px-4">
