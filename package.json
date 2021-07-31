@@ -1,6 +1,6 @@
 {
   "name": "bookmark",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.2.0",
