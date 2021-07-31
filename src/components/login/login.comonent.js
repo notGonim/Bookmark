@@ -3,7 +3,7 @@ import { useHistory } from 'react-router'
 import loginPic from '../../assets/LoginForm.svg'
 import FirebaseContext from '../../store/firebase/firebase.context'
 import { LoginForm } from '../form/loginForm.component'
-import * as ROUTES from './constants/routes'
+import * as ROUTES from '../../constants/routes'
 
 
 

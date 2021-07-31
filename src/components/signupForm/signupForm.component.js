@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Logo from '../../assets/logoWhite.svg'
 import FirebaseContext from '../../store/firebase/firebase.context'
-import * as ROUTES from './constants/routes'
+import * as ROUTES from '../../constants/routes'
+import { doesUsernameExist } from '../../services/firebase.service'
 
 
 
@@ -38,7 +39,6 @@ export const SignupForm = () => {
                         username: username.toLowerCase(),
                         fullname,
                         emailAddress: email.toLowerCase(),
-                        pets: [],
                         dateCreated: Date.now()
                     }
                 )
@@ -69,16 +69,27 @@ export const SignupForm = () => {
                 <h1 className="text-blue-700 font-extrabold text-3xl py-4">Sign Up To Bookmark</h1>
                 <hr />
                 <div className="flex flex-col items-center  bg-white py-4 px-20  mb-4 ">
-                    <form method="POST">
-                        <input type="email" placeholder="Username" aria-label="Enter your Username"
-                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2" />
-                        <input type="email" placeholder="Full Name" aria-label="Enter your Full Name"
-                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2" />
+                    {err && <p className="mb-4 text-xs text-red-500">{err}</p>}
+                    <form onSubmit={handleSignup} method="POST">
+                        <input type="text" placeholder="Username" aria-label="Enter your Username"
+                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2"
+                            onChange={({ target }) => setUsername(target.value)} value={username}
+                        />
+                        <input type="text" placeholder="Full Name" aria-label="Enter your Full Name"
+                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2"
+                            onChange={({ target }) => setFullname(target.value)} value={fullname}
+                        />
                         <input type="email" placeholder="Email Address" aria-label="Enter your email"
-                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2" />
+                            className="text-sm text-gray-base w-full py-5 px-4 h-3 border border-gray-primary rounded mb-2"
+                            onChange={({ target }) => setEmail(target.value)} value={email}
+                        />
                         <input type="password" placeholder="Your Password" aria-label="Enter your password"
-                            className="text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-primary rounded mb-2" />
-                        <button type="submit" className={`bg-blue-700 w-full rounded h-8 font-bold  text-white  `}>Sign Up</button>
+                            className="text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-primary rounded mb-2"
+                            onChange={({ target }) => setPassword(target.value)} value={password}
+                        />
+                        <button type="submit" disabled={isInvalid} className={`bg-blue-700 w-full rounded h-8 font-bold  text-white  ${isInvalid && 'opacity-50'} `}
+
+                        >Sign Up</button>
                     </form>
                 </div>
                 <div className="flex justify-center items-center flex-col w-full bg-white rounded p-4 border border-gray-primary ">
