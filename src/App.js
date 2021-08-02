@@ -7,6 +7,7 @@ import Spinner from "./components/spinner/spinner.component";
 
 import useAuthListener from "./hooks/users/useAuth.hook";
 import UserContext from "./store/users/user.context";
+import ThemeProvider from "./store/theme/theme.context";
 
 const SignupPage = lazy(() => import('./pages/signup.page'))
 const DashboardPage = lazy(() => import('./pages/dashboard.page'))
@@ -22,36 +23,34 @@ function App() {
 
   const { user } = useAuthListener()
 
-
-
   return (
-    <UserContext.Provider value={{ user }}>
-      <Router>
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
-              <DashboardPage />
-            </ProtectedRoute>
-            <ProtectedRoute user={user} path={ROUTES.PROFILE} exact   >
-              <ProfilePage />
-            </ProtectedRoute>
-            <ProtectedRoute user={user} path={ROUTES.SETTING} exact   >
-              <SettingPage />
-            </ProtectedRoute>
-            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
-              <LandingPage />
-            </IsUserLoggedIn>
-            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
-              <SigninPage />
-            </IsUserLoggedIn>
-            <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
-              <SignupPage />
-            </IsUserLoggedIn>
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
-      </Router>
-    </UserContext.Provider>
+      <UserContext.Provider value={{ user }}>
+        <Router>
+          <Suspense fallback={<Spinner />}>
+            <Switch>
+              <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
+                <DashboardPage />
+              </ProtectedRoute>
+              <ProtectedRoute user={user} path={ROUTES.PROFILE} exact   >
+                <ProfilePage />
+              </ProtectedRoute>
+              <ProtectedRoute user={user} path={ROUTES.SETTING} exact   >
+                <SettingPage />
+              </ProtectedRoute>
+              <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LANDPAGE}>
+                <LandingPage />
+              </IsUserLoggedIn>
+              <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
+                <SigninPage />
+              </IsUserLoggedIn>
+              <IsUserLoggedIn user={user} exact loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
+                <SignupPage />
+              </IsUserLoggedIn>
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
+        </Router>
+      </UserContext.Provider>
   )
 }
 

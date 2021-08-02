@@ -14,7 +14,6 @@ export default function Menu() {
     const signOut = () => {
         firebase.auth().signOut()
     }
-
     return (
         <div className="origin-top-right absolute right-6 mt-40 w-52 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">

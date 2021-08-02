@@ -8,13 +8,16 @@ import reportWebVitals from './reportWebVitals';
 
 import FirebaseContext from './store/firebase/firebase.context'
 import { firebase, FieldValue } from './lib/firebase.lib'
+import { ThemeProvider } from './store/theme/theme.context';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseContext.Provider value={{ firebase, FieldValue }}>
-      <App />
+      <ThemeProvider>
+        <App /> 
+      </ThemeProvider>
     </FirebaseContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
