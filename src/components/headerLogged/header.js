@@ -19,7 +19,7 @@ export const LoggedHeader = () => {
     }
 
     return (
-        <header className="font-Poppins  ">
+        <header className="font-Poppins dark:bg-black ">
             <nav className="container items-center relative  flex py-6">
                 <div className="py-1">
                     <img src={Logo} alt="logo" />
@@ -28,7 +28,7 @@ export const LoggedHeader = () => {
                     <li className="cursor-pointer"><input type="text"
                         className="text-lg text-gray-base w-72 py-4 px-4 h-2 border border-gray-primary rounded  text-black" placeholder="Quick Find" /></li>
                     <li className="cursor-pointer"><UilPlus /></li>
-                    <li className="cursor-pointer" onClick={onChangeTheme}>  {!darkMode ? <UilPizzaSlice /> : <UilBrightness />}</li>
+                    <li className="cursor-pointer" onClick={onChangeTheme}>  {darkMode ? <UilPizzaSlice /> : <UilBrightness />}</li>
                     <li className="cursor-pointer" onClick={() => setMenuShow(!menuShow)} ><UilSetting /></li>
                 </ul>
                 {menuShow && <Menu />}

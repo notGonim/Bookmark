@@ -2,7 +2,7 @@ import React from 'react'
 import { UilPlusCircle } from '@iconscout/react-unicons'
 export const Sidebar = () => {
     return (
-        <div className="container py-2  border-r-2 min-h-screen font-Poppins">
+        <div className="container  py-2  border-r-2 min-h-screen font-Poppins">
             <ul className="font-semibold">
                 <li className="cursor-pointer"><h2>All Bookmarks</h2></li>
                 <li className="cursor-pointer"><h2>Movies</h2></li>
