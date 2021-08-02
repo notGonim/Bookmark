@@ -1,9 +1,11 @@
 import React from 'react'
+import { AddLabel } from '../addLabelModel/addLabel.component'
 
-export const Contnet = () => {
+export const Contnet = ({ showModel, setShowModel }) => {
     return (
         <div>
-            this is contnet
+            czxczx
+            <AddLabel showModel={showModel} setShowModel={setShowModel} />
         </div>
     )
 }
