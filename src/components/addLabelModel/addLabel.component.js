@@ -1,32 +1,23 @@
 import React, { useRef } from 'react'
-import { useSpring, animated } from 'react-spring';
+import { UilPlus } from '@iconscout/react-unicons'
 
 
 
 export const AddLabel = ({ showModel, setShowModel }) => {
-    const modalRef = useRef();
 
-    const animation = useSpring({
-        config: {
-            duration: 250
-        },
-        opacity: showModel ? 1 : 0,
-        transform: showModel ? `translateY(0%)` : `translateY(-100%)`
-    });
-
-    const closeModal = e => {
-        if (modalRef.current === e.target) {
-            setShowModel(false);
-        }
-    };
     return (
         <>
             {showModel ?
-                <div className=" h-screen flex items-center  justify-center">
-                    <div className="rounded-xl w-7/12 h-96 bg-white border-2">
-                        model
+
+                <div className="origin-top-right absolute  mt-32 w-96 h-16  shadow-lg bg-white flex items-center justify-center"
+                    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div className="py-1  flex items-center justify-between" role="none">
+                        <input type="text"
+                            className="text-lg text-gray-base w-72 py-4 px-4 h-2 border border-gray-primary rounded outline-none  text-black" placeholder="Write your label" />
+                        <UilPlus className='text-blue-700 text-lg cursor-pointer'/>
                     </div>
-                </div> : null}
+                </div>
+                : null}
         </>
     )
 }
