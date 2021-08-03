@@ -21,7 +21,12 @@ export const AddLabel = ({ showModel, setShowModel }) => {
     };
     return (
         <>
-            {showModel ? <div style={animation} className="p-9">Model</div> : null}
+            {showModel ?
+                <div className=" h-screen flex items-center  justify-center">
+                    <div className="rounded-xl w-7/12 h-96 bg-white border-2">
+                        model
+                    </div>
+                </div> : null}
         </>
     )
 }
